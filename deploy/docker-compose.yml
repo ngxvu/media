@@ -4,11 +4,11 @@ services:
   media-service:
     container_name: media-service
     image: "media-service:1.0.0"
-    hostname: smsotp
+    hostname: media-service
     restart: always
     ports:
       - "8082:8082"
-
-
+    volumes:
+      - ./image-storage:/media-service/image-storage
 networks:
-  oneship_network:
+  media-service-network:
